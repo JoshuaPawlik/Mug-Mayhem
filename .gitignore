@@ -1,0 +1,40 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Visual Studio / MonoDevelop generated
+.vs/
+/*.userprefs
+/*.csproj
+/*.pidb
+/*.sln
+/*.suo
+/*.user
+/*.unityproj
+/*.booproj
+/*.sln.DotSettings.user
+
+# Other
+/Assembly-CSharp-Editor*.dll
+/obj/
+/TestResults/
+/*.dll
+/*.exe
+/*.apk
+/*.unitypackage
+/*.mp4
+/*.zip
+
+# Uncomment this line if you wish to ignore asset serialization
+#*.asset
+
+# Uncomment this line if you wish to ignore .unityproj files
+#*.unityproj
+
+# Uncomment this line if you wish to ignore .DS_Store files
+#.DS_Store
