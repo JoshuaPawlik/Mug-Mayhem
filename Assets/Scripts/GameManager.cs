@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
         // Keep the GameManager alive throughout the game
         DontDestroyOnLoad(gameObject);
+        
     }
 
     // Update is called once per frame
@@ -32,7 +33,17 @@ public class GameManager : MonoBehaviour
     // Function to quit the game
     public void QuitGame()
     {
-        Application.Quit();
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
+
+    // Function to start the game
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Gameplay Scene");
     }
 
 }
