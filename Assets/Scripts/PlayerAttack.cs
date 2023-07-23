@@ -10,6 +10,9 @@ public class PlayerAttack : MonoBehaviour
     public float punchDistance = 1f;
     public float punchSpeed = 8f;
 
+    public AudioClip punchSound;
+    private AudioSource audioSource;
+
     private bool isPunching = false;
 
     void Start()
@@ -18,6 +21,8 @@ public class PlayerAttack : MonoBehaviour
         punchHand = transform.Find("Hand/punch-hand").gameObject;
 
         punchHand.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -34,6 +39,9 @@ public class PlayerAttack : MonoBehaviour
 
         regularHand.SetActive(false);
         punchHand.SetActive(true);
+
+        // Play the punch sound effect
+        audioSource.PlayOneShot(punchSound);
 
         Vector3 initialPosition = punchHand.transform.localPosition;
         Vector3 targetPosition = initialPosition - Vector3.right * punchDistance;
