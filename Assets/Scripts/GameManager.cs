@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
+
+    public Button startButton;
+    public Button optionsButton;
+    public Button quitButton;
+
     // Make this class a Singleton
     public static GameManager instance = null;
 
@@ -44,6 +51,18 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Gameplay Scene");
+    }
+
+    // Function to show options menu
+    public void ShowOptions()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
+    // Function to show main menu
+    public void ShowMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 
 }

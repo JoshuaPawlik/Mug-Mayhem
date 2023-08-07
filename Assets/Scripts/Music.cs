@@ -6,6 +6,17 @@ public class Music : MonoBehaviour
 {
     AudioSource audioSource;
 
+    public static Music instance; 
+
+    private void Awake(){
+        if (instance == null){
+            instance = this; 
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
