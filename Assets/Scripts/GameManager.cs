@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
 
         // Keep the GameManager alive throughout the game
         DontDestroyOnLoad(gameObject);
+
+        // Set the target frame rate to 60
+        Application.targetFrameRate = 60;
         
     }
 
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
     // Function to start the game
     public void StartGame()
     {
-        SceneManager.LoadScene("Gameplay Scene");
+        SceneManager.LoadScene("Gameplay");
     }
 
     // Function to show options menu
