@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 607667214}
   - component: {fileID: 607667213}
   m_Layer: 0
-  m_Name: Music
+  m_Name: Music Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -672,6 +672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e108dbec0f629e4bb1f8dcb81a44754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuMusic: {fileID: 8300000, guid: c10e354f6b80ce846b6f3ec7deb3a86a, type: 3}
+  mainGameplayMusic: {fileID: 8300000, guid: 221999652e2ce1549b4831e20db80d75, type: 3}
 --- !u!82 &607667214
 AudioSource:
   m_ObjectHideFlags: 0

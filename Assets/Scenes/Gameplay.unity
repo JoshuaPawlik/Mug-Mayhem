@@ -1128,6 +1128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60e62bc861d4043836aebbbd8606a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startButton: {fileID: 0}
+  optionsButton: {fileID: 0}
+  quitButton: {fileID: 0}
 --- !u!1 &868623490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029809358
 GameObject:
@@ -1402,7 +1405,7 @@ RectTransform:
   m_Children:
   - {fileID: 510436043}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2252,7 +2255,7 @@ GameObject:
   - component: {fileID: 1624579721}
   - component: {fileID: 1624579720}
   m_Layer: 0
-  m_Name: Music
+  m_Name: Music Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2270,6 +2273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e108dbec0f629e4bb1f8dcb81a44754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainGameplayMusic: {fileID: 8300000, guid: 221999652e2ce1549b4831e20db80d75, type: 3}
 --- !u!82 &1624579721
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2379,7 +2383,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001759806
 GameObject:
