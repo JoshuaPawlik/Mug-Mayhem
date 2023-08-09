@@ -8,10 +8,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    public Button startButton;
-    public Button optionsButton;
-    public Button quitButton;
-
     // Make this class a Singleton
     public static GameManager instance = null;
 
@@ -35,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKey("escape") || Input.GetKeyDown(KeyCode.Escape))
         {
-            QuitGame();
+            ShowMainMenu();
         }
     }
 

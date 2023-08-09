@@ -19,10 +19,7 @@ public class PlayerAttack : MonoBehaviour
     {
         regularHand = transform.Find("Hand/mug-hand").gameObject;
         punchHand = transform.Find("Hand/punch-hand").gameObject;
-
         punchHand.SetActive(false);
-
-        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -40,8 +37,8 @@ public class PlayerAttack : MonoBehaviour
         regularHand.SetActive(false);
         punchHand.SetActive(true);
 
-        // Play the punch sound effect
-        audioSource.PlayOneShot(punchSound);
+        // Play the punch sound effect using the AudioManager
+        AudioManager.instance.PlayPunchSound();
 
         Vector3 initialPosition = punchHand.transform.localPosition;
         Vector3 targetPosition = initialPosition - Vector3.right * punchDistance;

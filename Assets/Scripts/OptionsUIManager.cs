@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class OptionsUIManager : MonoBehaviour
 {
-    public Button startButton;
-    public Button optionsButton;
-    public Button quitButton;
     public Button backButton;
-
     public Slider masterVolumeSlider;
     public Slider musicVolumeSlider;
 
@@ -18,15 +14,6 @@ public class UIManager : MonoBehaviour
         // Ensure GameManager instance exists
         if(GameManager.instance != null)
         {
-            if(startButton != null)
-                startButton.onClick.AddListener(GameManager.instance.StartGame);
-            
-            if(optionsButton != null)
-                optionsButton.onClick.AddListener(GameManager.instance.ShowOptions);
-            
-            if(quitButton != null)
-                quitButton.onClick.AddListener(GameManager.instance.QuitGame);
-
             if(backButton != null)
                 backButton.onClick.AddListener(GameManager.instance.ShowMainMenu);
         }
@@ -40,5 +27,18 @@ public class UIManager : MonoBehaviour
             if (musicVolumeSlider != null)
                 musicVolumeSlider.onValueChanged.AddListener(AudioManager.instance.SetMusicVolume);
         }
+
+        // Set the slider values based on the current settings
+        if (masterVolumeSlider != null)
+        {
+            masterVolumeSlider.value = GameSettings.masterVolume * 100.0f;  // Convert from [0,1] to [0,100]
+        }
+
+        if (musicVolumeSlider != null)
+        {
+            musicVolumeSlider.value = GameSettings.musicVolume * 100.0f; // Convert from [0,1] to [0,100]
+        }
+
     }
 }
+
