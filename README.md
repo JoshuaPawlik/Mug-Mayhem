@@ -5,17 +5,8 @@ Mug-Mayhem is an exciting 2D side-scrolling endless combat game developed using 
 
 ## Table of Contents
 
-- [To-Do List](#to-do-list)
 - [Installation](#installation)
 - [How to Play](#how-to-play)
-
-## To-Do List
-
-- [ ] Implement enemy AI behavior.
-- [ ] Add different enemy types and bosses.
-- [ ] Design and implement additional levels.
-- [ ] Create a high-score system.
-- [ ] Improve UI/UX for a more polished experience.
 
 ## Installation
 
@@ -31,6 +22,5 @@ Follow these steps to get Mug-Mayhem up and running on your machine:
 
 - Use the arrow keys or WASD to move your coffee mug.
 - Press the spacebar to jump.
-- Use the mouse to aim and left-click to attack. (WIP)
-- Collect power-ups to gain new abilities and increase your score. (WIP)
+- Use left-click to attack.
 - Survive as long as possible and achieve the highest score!
