@@ -9,6 +9,9 @@ public class OptionsUIManager : MonoBehaviour
     public Slider masterVolumeSlider;
     public Slider musicVolumeSlider;
 
+    public Toggle fullScreenToggleButton;
+
+
     private void Start()
     {
         // Ensure GameManager instance exists
@@ -39,6 +42,12 @@ public class OptionsUIManager : MonoBehaviour
             musicVolumeSlider.value = GameSettings.musicVolume * 100.0f; // Convert from [0,1] to [0,100]
         }
 
+    }
+
+    public void ToggleFullScreen()
+    {
+        Debug.Log("Toggling full screen");
+        Screen.fullScreen = !Screen.fullScreen;
     }
 }
 
