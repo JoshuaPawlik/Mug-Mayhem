@@ -11,8 +11,14 @@ public class GameManager : MonoBehaviour
     // Make this class a Singleton
     public static GameManager instance = null;
 
+    private bool isPaused = false;
+    public GameObject pauseMenu;
+
     void Awake()
     {
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         if (instance == null)
             instance = this;
         else if (instance != this)
@@ -29,9 +35,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("escape") || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ShowMainMenu();
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
 
@@ -49,6 +62,7 @@ public class GameManager : MonoBehaviour
     // Function to start the game
     public void StartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Gameplay");
     }
 
@@ -61,7 +75,53 @@ public class GameManager : MonoBehaviour
     // Function to show main menu
     public void ShowMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
     }
+
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;  // This halts the game time
+        isPaused = true;
+
+        // Optionally, display the pause menu
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(true);
+        }
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;  // This resumes the game time
+        isPaused = false;
+
+        // Optionally, hide the pause menu
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(false);
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Gameplay")
+        {
+            pauseMenu = GameObject.Find("PauseMenu");
+
+            // Ensure the pause menu is initially inactive
+            if (pauseMenu != null)
+            {
+                pauseMenu.SetActive(false);
+            }
+        }
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;  // Unsubscribe from the event
+    }
+
 
 }
